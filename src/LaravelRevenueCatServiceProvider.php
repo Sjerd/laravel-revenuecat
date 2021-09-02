@@ -1,10 +1,10 @@
 <?php
 
-namespace Sjerd\LaravelRevenuecat;
+namespace Sjerd\LaravelRevenueCat;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelRevenuecatServiceProvider extends ServiceProvider
+class LaravelRevenueCatServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.

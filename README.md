@@ -1,4 +1,4 @@
-# laravel-revenuecat
+# Laravel RevenueCat
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -28,7 +28,7 @@ to publish the config files.
 Add the `REVENUECAT_API_KEY` to your `.env` file.
 
 If you do not run Laravel 5.5 (or higher), then add the service provider in `config/app.php`:
-`Sjerd\LaravelRevenuecat\LaravelRevenuecatServiceProvider::class,`
+`Sjerd\LaravelRevenuecat\LaravelRevenueCatServiceProvider::class,`
 
 ## Usage
 

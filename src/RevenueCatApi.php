@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sjerd\LaravelRevenuecat;
+namespace Sjerd\LaravelRevenueCat;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
@@ -46,7 +46,7 @@ class RevenueCatApi
         'productIdentifier' => 'monthly'
     ]): bool
     {
-        if($this->subscriber !== null) {
+        if ($this->subscriber !== null) {
             $user = $this->subscriber;
         } else {
             $user = $this->getSubscriber($this->getUserId($options['userId']));
