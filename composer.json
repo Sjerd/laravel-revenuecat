@@ -17,7 +17,7 @@
       "role": "Developer"
     }
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "require": {
     "php": "~7.2",
     "guzzlehttp/guzzle": "^6.5"
