@@ -17,6 +17,7 @@
       "role": "Developer"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
     "php": "~7.2",
     "guzzlehttp/guzzle": "^6.5"
@@ -42,7 +43,7 @@
   },
   "extra": {
     "branch-alias": {
-      "master": "v0.0.1"
+      "master": "dev"
     }
   },
   "config": {
