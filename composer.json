@@ -1,5 +1,6 @@
 {
   "name": "sjerd/laravel-revenuecat",
+  "version": "0.0.1",
   "type": "library",
   "description": "Wrapper to perform basic tasks against the RevenueCat API",
   "keywords": [
@@ -41,7 +42,7 @@
   },
   "extra": {
     "branch-alias": {
-      "master": "1.0-dev"
+      "master": "0.0.1"
     }
   },
   "config": {
