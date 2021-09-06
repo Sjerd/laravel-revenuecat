@@ -42,17 +42,19 @@ class RevenueCatApi
      * @return string Returns the api response
      */
     public function isSubscribed($options = [
-        'userId' => null,
-        'productIdentifier' => 'monthly'
+        'user_id' => null,
+        'product_identifier' => 'monthly'
     ]): bool
     {
+        $this->checkUserId($options['user_id']);
+
         if ($this->subscriber !== null) {
             $user = $this->subscriber;
         } else {
-            $user = $this->getSubscriber($this->getUserId($options['userId']));
+            $user = $this->getSubscriber($this->getUserId($options['user_id']));
         }
 
-        return $user['subscriber']['subscriptions'][$options['productIdentifier']]['ownership_type'] === "PURCHASED";
+        return $user['subscriber']['subscriptions'][$options['product_identifier']]['ownership_type'] === "PURCHASED";
     }
 
     /**
@@ -64,6 +66,8 @@ class RevenueCatApi
      */
     public function getSubscriber(string $userId): object
     {
+        $this->checkUserId($userId);
+
         $this->userId = $userId;
 
         $response = $this->getRequest(`subscribers/$this->userId`);
@@ -82,6 +86,8 @@ class RevenueCatApi
      */
     public function deleteSubscriber(string $userId = null): object
     {
+        $this->checkUserId($userId);
+
         $response = $this->deleteRequest(`subscribers/` + $this->getUserId($userId));
 
         return $response->getBody();
@@ -120,6 +126,13 @@ class RevenueCatApi
             if ($e->hasResponse()) {
                 throw new \Exception(Psr7\Message::toString($e->getResponse()));
             }
+        }
+    }
+
+    protected function checkUserId($userId)
+    {
+        if ($this->subscriber === null && $userId === null) {
+            throw new \Exception('No user_id given or subscriber set.');
         }
     }
 
